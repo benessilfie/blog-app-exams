@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        helvetica: ["Helvetica Now Display", "sans-serif"],
+        monolisa: ["MonoLisa", "sans-serif"],
       },
     },
   },

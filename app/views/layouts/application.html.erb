@@ -10,7 +10,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="font-helvetica container mx-auto">
+  <body class="bg-[#1e1e1e] text-[#eaeaea] font-monolisa">
+    <main class="container w-3/5 mx-auto">
     <%= yield  %>
+    </main>
   </body>
 </html>
