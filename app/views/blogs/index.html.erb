@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<section>
 
-<h1 class="text-green-700 font-bold">Blogs</h1>
+<%# render navbar partial from shared %>
+<%= render "shared/navbar" %>
 
-<div id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
-  <% end %>
-</div>
+<%# render notice %>
+<p class="text-green-700"><%= notice %></p>
 
-<%= link_to "New blog", new_blog_path %>
+  <div class="mt-10">
+    <h1 class="text-green-700 font-bold py-1">Blogs</h1>
+    
+    <div id="blogs">
+      <% @blogs.each do |blog| %>
+        <%= render blog %>
+        <p>
+          <%= link_to "Show this blog", blog %>
+        </p>
+      <% end %>
+    </div>
+  
+    <%= link_to "New blog", new_blog_path %>
+  </div>
+
+</section>
