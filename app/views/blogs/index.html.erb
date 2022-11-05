@@ -12,13 +12,13 @@
     <div id="blogs">
       <% @blogs.each do |blog| %>
         <%= render blog %>
-        <p>
-          <%= link_to "Show this blog", blog %>
-        </p>
+        <div class="space-x-8">
+          <%= link_to "Show this blog", blog, class:"hover:underline" %>
+          <%= link_to "New blog", new_blog_path, class:"hover:underline" %>
+        </div>
       <% end %>
     </div>
   
-    <%= link_to "New blog", new_blog_path %>
   </div>
 
 </section>
