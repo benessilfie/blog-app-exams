@@ -1,6 +1,7 @@
 # Altschool Assignment: Todo App [Live Demo](https://blog-app-altexams.herokuapp.com/)
 
 ![Alt text](/public/screen1.png?raw=true)
+![Alt text](/public/screen3.png?raw=true)
 ![Alt text](/public/screen2.png?raw=true)
 
 ## Live Demo
