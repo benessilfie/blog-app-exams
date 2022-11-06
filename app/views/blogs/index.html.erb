@@ -1,24 +1,45 @@
-<section>
+<section class="mt-20">
 
-<%# render navbar partial from shared %>
-<%= render "shared/navbar" %>
+<div class="fixed top-0 left-50% w-3/5 mx-auto bg-[#111111] border-b border-[#4a4a4a] px-2 sm:px-4 py-3 dark:bg-gray-900">
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+
+    <div class="flex space-x-6">
+      <%# return Arrow %>
+      <%= link_to root_path do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4a4a4a" class="w-6 h-6 hover:stroke-[#7e7e7e] ">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+          </svg>
+      <% end %>
+
+        <p class="text-[#eaeaea] font-medium text-md">Hello, <%= @user.first_name %></p>
+    </div>
+
+
+  <div class="flex md:order-2 space-x-2">
+      <button><%= link_to "Sign Out", logout_path, method: :post, data: { turbo_method: :post }, class: "text-[#eaeaea] bg-[#111] border border-[#4a4a4a] hover:bg-[#1e1e1e] font-medium rounded-full text-sm px-5 py-2.5 text-center mr-3 md:mr-0" %></button>
+      
+      <button type="button" class="text-[#eaeaea] bg-[#111] border border-[#4a4a4a] hover:bg-[#1e1e1e] font-medium rounded-full text-sm px-5 py-1.5 text-center mr-3 md:mr-0">
+          <%= link_to new_blog_path do %>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          <% end %>
+      </button>
+  </div>
+  </div>
+</div>
+
 
 <%# render notice %>
-<p class="text-green-700"><%= notice %></p>
+<% if notice.present? %>
+  <p class="py-2 pl-6 text-sm text-green-700 inline-block" id="notice">
+    <%= notice %>
+  </p>
+<% end %>
 
-  <div class="mt-10">
-    <h1 class="text-green-700 font-bold py-1">Blogs</h1>
-    
-    <div id="blogs">
-      <% @blogs.each do |blog| %>
+  <div id="blogs" class="">
+    <% @blogs.each do |blog| %>
         <%= render blog %>
-        <div class="space-x-8">
-          <%= link_to "Show this blog", blog, class:"hover:underline" %>
-          <%= link_to "New blog", new_blog_path, class:"hover:underline" %>
-        </div>
-      <% end %>
-    </div>
-  
+    <% end %>
   </div>
-
 </section>

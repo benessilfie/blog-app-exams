@@ -1,12 +1,30 @@
-<div id="<%= dom_id blog %>" class="py-8" >
-  <p>
-    <strong>Title:</strong>
+<div id="<%= dom_id blog %>" class="px-6 py-8 border-b border-[#4a4a4a]" >
+  <p class="pb-4 font-bold">
     <%= blog.title %>
   </p>
 
-  <p>
-    <strong>Body:</strong>
-    <%= blog.body %>
+  <p class="text-[#939393] text-justify text-sm">
+    <%= blog.body.to_plain_text.truncate_words(50) %>
   </p>
+
+
+  <span class="text-xs px-2.5 py-2 rounded-full bg-[#111111] border border-[#4a4a4a] text-[#eaeaea] mr-2 hover:bg-[#1e1e1e]"><%= link_to "read more", blog %></span>
+
+ 
+
+  <% if blog.user == @current_user %>
+  <span class="bg-[#111111] border border-[#4a4a4a] text-[#eaeaea] mt-4 text-xs font-medium inline-flex items-center px-2.5 py-2 rounded-full mr-2  hover:bg-[#1e1e1e]">
+  <svg aria-hidden="true" class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+  You published this article <%= time_ago_in_words(blog.created_at) %> ago
+</span>
+<% else %>
+  <span class="bg-[#111111] border border-[#4a4a4a] text-[#eaeaea] mt-4 text-xs font-medium inline-flex items-center px-2.5 py-2 rounded-full mr-2 dark:bg-gray-700 dark:text-gray-300 hover:bg-[#1e1e1e]">
+    <svg aria-hidden="true" class="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+    <%= blog.user.first_name %> published this article <%= time_ago_in_words(blog.created_at) %> ago
+  </span>
+<% end %>
+
+
+
 
 </div>

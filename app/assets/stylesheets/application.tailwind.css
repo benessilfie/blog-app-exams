@@ -2,4 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* custom Fonts - MonoLisa*/
+  @font-face {
+    font-family: "Mono Lisa";
+    src: url("../fonts/MonoLisa-Regular.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
 
+  @font-face {
+    font-family: "Mono Lisa";
+    src: url("../fonts/MonoLisa-Medium.ttf") format("ttf");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Mono Lisa";
+    src: url("../fonts/MonoLisa-SemiBold.ttf") format("ttf");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Mono Lisa";
+    src: url("../fonts/MonoLisa-Bold.ttf") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Mono Lisa";
+    src: url("../fonts/MonoLisa-ExtraBold.ttf") format("ttf");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Mono Lisa";
+    src: url("../fonts/MonoLisa-Black.ttf") format("ttf");
+    font-weight: 800;
+    font-style: normal;
+  }
+}

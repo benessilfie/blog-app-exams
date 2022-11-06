@@ -1,0 +1,52 @@
+<section>
+   
+   <div class="container w-96 block mx-auto mt-20">
+       <div class="p-4 w-full max-w-sm rounded-sm border border-[#4a4a4a] shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+
+        <%# return Arrow %>
+        <%= link_to root_path do %>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4a4a4a" class="w-6 h-6 hover:stroke-[#7e7e7e] ">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                </svg>
+        <% end %>
+
+
+        <% if notice.present? %>
+            <div class="flex pt-3 self-start text-sm text-green-700" role="alert">
+                <%= notice %>
+            </div>
+        <% end %> 
+
+           <%= form_with(scope: :credentials, class: "space-y-6") do |form| %>
+
+               <h5 class="text-xl font-medium text-[#eaeaea] dark:text-white">Sign In To Your Account</h5>
+
+               <div>
+                   <%= form.label :email, "Your email", class: "block mb-2 text-sm font-medium text-[#eaeaea]" %>
+                   <%= form.email_field :email, placeholder: "name@company.com", class: "bg-[#191919] border border-[#4a4a4a] text-[#eaeaea] text-sm rounded-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 placeholder-[#636363]" %>
+               </div>
+
+
+                   <div>
+                       <%= form.label :password, "Your password", class: "block mb-2 text-sm font-medium text-[#eaeaea]" %>
+                       
+                       <%= form.password_field :password, placeholder: "••••••••", class: "bg-[#191919] border border-[#4a4a4a] text-[#eaeaea] text-sm rounded-sm focus:ring-green-500 focus:border-green-500 block w-full p-2.5 placeholder-[#636363] dark:text-white" %>
+                   </div>
+
+                <%= form.submit "Login to your account", class: "w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-sm text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" %>
+               
+               
+            <div class="flex justify-center ">
+               <div class="text-sm font-medium text-[#4a4a4a] dark:text-[#4a4a4a]">
+                   Not registered? 
+                   <span class="text-green-700 hover:underline hover:text-green-600">
+                   <%= link_to "Create account",  sign_up_path %>
+                   </span>
+               </div>
+            </div>
+
+           <% end %>
+
+       </div>
+   </div>
+</section>

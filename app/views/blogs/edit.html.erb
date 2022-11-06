@@ -1,12 +1,23 @@
 <div class="my-8">
-  <h1 class="text-green-700 font-bold py-1">Editing blog</h1>
+     <div class="flex justify-between">
+       <div class="flex">
+         <div class="inline-block mt-1 mr-4">
+              <%= link_to root_path do %> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#4a4a4a" class="w-6 h-6 hover:stroke-[#7e7e7e]"> <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"/></svg>
+              <% end %>
+              </div>
+           <div>
+             <h1 class="text-[#eaeaea] text-xl font-bold py-1">Edit this Post</h1>
+           </div>
+       </div>
+
+         <div class="flex space-x-4 items-center">
+      
+           
+           <span class="text-xs px-2.5 py-2 rounded-full bg-[#111111] border border-[#4a4a4a] text-[#eaeaea] mr-2 hover:bg-purple-700"><%= link_to "view this post", @blog %></span>
+         </div>
+     </div>
   
   <%= render "form", blog: @blog %>
   
-  <br>
-  
-  <div>
-    <%= link_to "Show this blog", @blog %> |
-    <%= link_to "Back to blogs", blogs_path %>
-  </div>
+
 </div>
