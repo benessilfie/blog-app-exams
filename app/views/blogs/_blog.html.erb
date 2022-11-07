@@ -1,6 +1,6 @@
 <div id="<%= dom_id blog %>" class="px-6 py-8 border-b border-[#4a4a4a]" >
   <p class="pb-4 font-bold">
-    <%= blog.title %>
+    <%= blog.title.truncate(75) %>
   </p>
 
   <p class="text-[#939393] text-justify text-sm">
